@@ -1,35 +1,20 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+/*import { createRoot } from "react-dom/client";
 
-function App() {
-  const [count, setCount] = useState(0)
+const root = createRoot(document.getElementById("root"))
+const myElement = <h1>Come on, run it!</h1>;               //my first react code
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more yeah
-      </p>
-    </>
-  )
+root.render(
+  myElement
+);
+console.log(myElement);*/
+/*
+import { createRoot } from "react-dom/client";
+const root = createRoot(document.getElementById("root"));  // yeah i did it
+
+function MyElement() {
+  return <h1>if this runs you are learning well</h1>
 }
 
-export default App
+root.render(
+  <MyElement />
+)*/
