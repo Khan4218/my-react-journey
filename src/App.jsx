@@ -24,8 +24,38 @@ const h1 = document.createElement('h1');          //This code is using javaScrip
 h1.textContent = 'i am a good learner';
 root.appendChild(h1);*/
 
-
+/*
 const newRoot = document.getElementById('root');
 const h1 = document.createElement('h1');
 h1.textContent = 'Hello, vanilla JavaScript!'
 newRoot.appendChild(h1)
+*/
+/*
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <main>
+    <img src="src/assets/react.svg" />
+    <h1>This is another element</h1>
+  </main>
+
+)
+*/
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+root.render(
+
+  <main>
+    <img src="src/assets/react.svg" width="40px" alt="logo-react" />
+    <h1>Fun facts about React </h1>
+    <ul>
+      <li> was first released in 2018 </li>
+      <li> was originally created by Jordan walke</li>
+      <li> Has well over 100k stars on Git</li>
+      <li> is maintained by Meta</li>
+      <li> Powers thousands of enterprise apps including <br />mobile apps</li>
+    </ul>
+
+
+  </main>
+)
