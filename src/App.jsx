@@ -41,21 +41,81 @@ root.render(
 
 )
 */
+/*
+// using a custom component and calling fun using <fun />
 import { createRoot } from "react-dom/client"
 const root = createRoot(document.getElementById("root"));
 root.render(
-
-  <main>
-    <img src="src/assets/react.svg" width="40px" alt="logo-react" />
-    <h1>Fun facts about React </h1>
-    <ul>
-      <li> was first released in 2018 </li>
-      <li> was originally created by Jordan walke</li>
-      <li> Has well over 100k stars on Git</li>
-      <li> is maintained by Meta</li>
-      <li> Powers thousands of enterprise apps including <br />mobile apps</li>
-    </ul>
-
-
-  </main>
+  <TemporaryName />
 )
+
+function TemporaryName() {
+  return (
+    <main>
+      <img src="src/assets/react.svg" width="40px" alt="logo-react" />
+      <h1>Fun facts about React </h1>
+      <ul>
+        <li> was first released in 2018 </li>
+        <li> was originally created by Jordan walke</li>
+        <li> Has well over 100k stars on Git</li>
+        <li> is maintained by Meta</li>
+        <li> Powers thousands of enterprise apps including <br />mobile apps</li>
+      </ul>
+
+
+    </main>
+  )
+}
+  */
+/*
+//challenge part 1 from scrimba
+
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+
+
+root.render(
+  <PageComp />
+)
+
+function PageComp() {
+  return (
+    <ol>
+      <li>I can save time using react</li>
+      <li>I can reuse the </li>
+      <li> it is easy to understand than javaScript</li>
+    </ol>
+  )
+}
+*/
+
+//challenge 2 from scrimba
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+
+
+root.render(
+  <PageComp />
+)
+
+function PageComp() {
+  return (
+    <div>
+      <header> <img src="../../src/assets/react.svg" width="40px" alt="react-logo" /> My First React Project  </header>
+
+      <main>
+        <h1>Why use React</h1>
+        <ol>
+          <li>I can save time using react</li>
+          <li>I can reuse the </li>
+          <li> it is easy to understand than javaScript</li>
+        </ol>
+      </main>
+      <footer>
+        <small>All rights Reserved</small>
+      </footer>
+    </div>
+
+  )
+}
+
