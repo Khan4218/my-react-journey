@@ -88,8 +88,9 @@ function PageComp() {
   )
 }
 */
+/*
 
-//challenge 2 from scrimba
+//challenge part 2 from scrimba
 import { createRoot } from "react-dom/client"
 const root = createRoot(document.getElementById("root"));
 
@@ -116,6 +117,55 @@ function PageComp() {
       </footer>
     </div>
 
+  )
+}
+  */
+// using fragments instead of parent element
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+
+
+root.render(
+  <PageComp />
+)
+
+function PageComp() {
+  return (
+    <>
+      <Header />
+      <MainComponent />
+      <Footer />
+    </>
+
+  )
+}
+
+function Header() {
+  return (
+    <header> <img src="../../src/assets/react.svg" width="40px" alt="react-logo" /> My First React Project
+    </header>
+  )
+
+}
+
+function MainComponent() {
+  return (
+    <main>
+      <h1>Why use React</h1>
+      <ol>
+        <li>I can save time using react</li>
+        <li>I can reuse the </li>
+        <li> it is easy to understand than javaScript</li>
+      </ol>
+    </main>
+  )
+}
+
+function Footer() {
+  return (
+    <footer>
+      <small>All rights Reserved</small>
+    </footer>
   )
 }
 
