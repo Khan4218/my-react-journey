@@ -1,3 +1,7 @@
+
+
+
+
 /*import { createRoot } from "react-dom/client";
 
 const root = createRoot(document.getElementById("root"))
@@ -13,7 +17,7 @@ const root = createRoot(document.getElementById("root"));  // yeah i did it
 
 function MyElement() {
   return <h1>if this runs you are learning well</h1>
-}                                                         
+}
 root.render(                                  //This code is using React
   <MyElement />
 )
@@ -121,6 +125,7 @@ function PageComp() {
 }
   */
 // using fragments instead of parent element
+
 import { createRoot } from "react-dom/client"
 const root = createRoot(document.getElementById("root"));
 
@@ -142,7 +147,15 @@ function PageComp() {
 
 function Header() {
   return (
-    <header> <img src="../../src/assets/react.svg" width="40px" alt="react-logo" /> My First React Project
+    <header className="header-style">
+      <img src="../../src/assets/react.svg" alt="react-logo" className="react-img" />
+      <nav>
+        <ul className="nav-list">
+          <li className="nav-list-items">Pricing</li>
+          <li className="nav-list-items">About</li>
+          <li className="nav-list-items">contact</li>
+        </ul>
+      </nav>
     </header>
   )
 
@@ -151,11 +164,11 @@ function Header() {
 function MainComponent() {
   return (
     <main>
-      <h1>Why use React</h1>
-      <ol>
-        <li>I can save time using react</li>
-        <li>I can reuse the </li>
-        <li> it is easy to understand than javaScript</li>
+      <h1 className="heading-style">Why use React</h1>
+      <ol className="order-list">
+        <li> can save time using react</li>
+        <li>I can reuse the  code</li>
+        <li>I it is easy to understand than javaScript</li>
       </ol>
     </main>
   )
@@ -163,7 +176,7 @@ function MainComponent() {
 
 function Footer() {
   return (
-    <footer>
+    <footer className="foot-style">
       <small>All rights Reserved</small>
     </footer>
   )

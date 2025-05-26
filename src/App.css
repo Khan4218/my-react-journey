@@ -3,8 +3,69 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   background: #27292c;
   color: white;
+  margin: 0;
+  padding: 0;
+
+
 }
 
 h1 {
   margin-top: 30px;
+}
+
+
+.nav-list {
+  list-style: none;
+  display: flex;
+
+}
+
+.header-style {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #dc1234, #150bc8);
+  padding-right: 30px;
+  padding-left: 30px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-sizing: border-box;
+
+
+}
+
+.nav-list-items {
+  margin-left: 50px;
+  font-size: 20px;
+  padding-left: 20px;
+
+}
+
+.react-img {
+  width: 55px;
+}
+
+.foot-style {
+
+  background: linear-gradient(90deg, #222, #333);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  box-sizing: border-box;
+  box-shadow: 0 -4px 10px rgba(79, 54, 54, 0.5);
+  margin-top: 489px;
+
+
+}
+
+.order-list {
+  padding-left: 80px;
+}
+
+.heading-style {
+  padding-left: 40px;
+  margin-top: 100px;
 }
