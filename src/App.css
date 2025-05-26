@@ -1,7 +1,7 @@
 body {
   padding: 20px;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #27292c;
+  font-family: Inter, sans-serif;
+  background: #26262e;
   color: white;
   margin: 0;
   padding: 0;
@@ -68,4 +68,49 @@ h1 {
 .heading-style {
   padding-left: 40px;
   margin-top: 100px;
+}
+
+.header-comp {
+  background-color: rgb(16, 15, 35);
+  height: 90px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.image-comp {
+  padding-right: 10px;
+  padding-left: 28px;
+  height: 28px;
+}
+
+.react-font {
+  font-size: 20px;
+  margin-bottom: 30px;
+  color: rgb(117, 218, 252);
+  font-family: arial;
+
+}
+
+.unordered-list {
+  li {
+    margin-bottom: 20px;
+    font-size: 17px;
+  }
+}
+
+::marker {
+  color: rgb(2, 167, 222);
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.main {
+  background-image: url(../src/images/images.png);
+  padding-left: 28px;
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+
+
 }
