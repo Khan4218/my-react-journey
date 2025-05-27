@@ -6,7 +6,7 @@ export default function JournalHeader() {
     <header className="journal-header">
       <nav>
         <FontAwesomeIcon icon={faEarthAmericas} className="global-img" />
-        <span className="text-head">my travel journal</span>
+        <span className="text-head">Akbar's travel journal</span>
       </nav>
     </header>
   );

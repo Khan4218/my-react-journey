@@ -29,6 +29,84 @@ body {
 .text-head {
   font-family: Inter, sans-serif;
   font-size: 15px;
+  font-weight: 500;
 
 
+}
+
+.card-1 {
+  background-color: white;
+  margin-top: 50px;
+  margin-left: 30px;
+  margin-right: 30px;
+  display: flex;
+
+}
+
+.location-icon {
+  color: red;
+  margin-right: 5px;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-right: 40px;
+  padding-top: 15px;
+  padding-left: 20px;
+
+
+}
+
+.card-img {
+  width: 250px;
+  height: 250px;
+
+}
+
+
+
+.item-1 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.map-link {
+  font-size: 13px;
+  color: gray;
+  text-decoration: underline;
+}
+
+.country-name {
+  margin-right: 10px;
+  color: #555;
+}
+
+.place-cont {
+  display: inline-block;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.place-title {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: -2px;
+}
+
+.place-dates {
+  font-size: 14px;
+  color: #070707;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.place-description {
+  color: black;
+  font-size: 15px;
+  line-height: 1.5;
 }
