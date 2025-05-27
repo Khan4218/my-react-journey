@@ -1,5 +1,5 @@
 
-export function Navbar() {
+export default function Navbar() {
   return (
     <header className="header-comp">
       <nav>
