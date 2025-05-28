@@ -2,60 +2,62 @@
 import { createRoot } from "react-dom/client"
 const root = createRoot(document.getElementById("root"));
 root.render(
-  <>
-    <div className="contacts">
+  function App() {
+    <>
+      <div className="contacts">
 
-      <Contact
-        img="./images/mr-whiskerson.png"
-        name="Mr. Whiskerson"
-        phone="(212) 555-1234"
-        email="mr.whiskaz@catnap.meow"
+        <Contact
+          img="./images/mr-whiskerson.png"
+          name="Mr. Whiskerson"
+          phone="(212) 555-1234"
+          email="mr.whiskaz@catnap.meow"
 
-      />
-      <Contact
-        img="./images/fluffykins.png"
-        name="Fluffykins"
-        phone="(212) 555-2345"
-        email="fluff@me.com"
-      />
-      <Contact
-        img="./images/felix.png"
-        name="Felix"
-        phone="(212) 555-4567"
-        email="thecat@hotmail.com"
-      />
-      <Contact
-        img="./images/pumpkin.png"
-        name="(0800) CAT KING"
-        phone="(212) 555-4567"
-        email="pumpkin@scrimba.com"
+        />
+        <Contact
+          img="./images/fluffykins.png"
+          name="Fluffykins"
+          phone="(212) 555-2345"
+          email="fluff@me.com"
+        />
+        <Contact
+          img="./images/felix.png"
+          name="Felix"
+          phone="(212) 555-4567"
+          email="thecat@hotmail.com"
+        />
+        <Contact
+          img="./images/pumpkin.png"
+          name="(0800) CAT KING"
+          phone="(212) 555-4567"
+          email="pumpkin@scrimba.com"
 
-      />
-    </div>
-  </>
+        />
+      </div>
+    </>
+  }
 )
 
-function Contact() {
+function Contact(props) {    //received props into a component
   return (
     <article className="contact-card">
       <img
-        src="./images/mr-whiskerson.png"
-        alt="Photo of Mr. Whiskerson"
+        src={props.img}
+        alt={`photo of ${props.name}`}
       />
-      <h3>Mr. Whiskerson</h3>
+      <h3>{props.name}</h3>
       <div className="info-group">
         <img
           src="./images/phone-icon.png"
           alt="phone icon"
         />
-        <p>(212) 555-1234</p>
+        <p>{props.phone}</p>
       </div>
       <div className="info-group">
         <img
           src="./images/mail-icon.png"
           alt="mail icon"
         />
-        <p>mr.whiskaz@catnap.meow</p>
+        <p>{props.email}</p>
       </div>
     </article>
   )
