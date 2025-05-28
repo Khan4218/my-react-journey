@@ -1,4 +1,41 @@
-export default function contacts() {
+// A small Article project to learn props and reuseability
+import { createRoot } from "react-dom/client"
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <>
+    <div className="contacts">
+
+      <Contact
+        img="./images/mr-whiskerson.png"
+        name="Mr. Whiskerson"
+        phone="(212) 555-1234"
+        email="mr.whiskaz@catnap.meow"
+
+      />
+      <Contact
+        img="./images/fluffykins.png"
+        name="Fluffykins"
+        phone="(212) 555-2345"
+        email="fluff@me.com"
+      />
+      <Contact
+        img="./images/felix.png"
+        name="Felix"
+        phone="(212) 555-4567"
+        email="thecat@hotmail.com"
+      />
+      <Contact
+        img="./images/pumpkin.png"
+        name="(0800) CAT KING"
+        phone="(212) 555-4567"
+        email="pumpkin@scrimba.com"
+
+      />
+    </div>
+  </>
+)
+
+function Contact() {
   return (
     <article className="contact-card">
       <img
@@ -23,4 +60,6 @@ export default function contacts() {
     </article>
   )
 };
+
+
 
