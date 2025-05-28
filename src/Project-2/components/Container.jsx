@@ -16,7 +16,7 @@ export default function Container() {
           <div className="item-1">
             <FontAwesomeIcon icon={faLocationDot} className="location-icon" />
             <span className="country-name">JAPAN</span>
-            <a href={mapsLink3} target="_blank" rel="noopener noreferrer" className="map-link">View on Google maps</a>
+            <a href={mapsLink1} target="_blank" rel="noopener noreferrer" className="map-link">View on Google maps</a>
           </div>
           <h1 className="place-title">Mount Fuji</h1>
           <div className="place-cont">
