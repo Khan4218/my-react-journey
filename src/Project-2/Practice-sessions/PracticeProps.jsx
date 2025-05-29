@@ -175,6 +175,23 @@ export default function Jokes({ Setup, Punchline }) {
   )
 }
 
+// Using array.Map method to pass props 
+import Joke from "./Joke"
+import jokesData from "./jokesData" // importing data from external source which consists of props setup and punchline
+
+
+export default function App() {
+  const jokeElements = jokesData.map((joke) => {
+    return <Joke setup={joke.setup} punchline={joke.punchline} />
+  })
+
+  return (
+    <main>
+      {jokeElements}
+    </main>
+  )
+}
+
 
 
 
