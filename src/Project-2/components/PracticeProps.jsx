@@ -176,3 +176,52 @@ export default function Jokes({ Setup, Punchline }) {
 }
 
 
+
+
+<>
+  <div className="card-1">
+    <img
+      className="card-img"
+      src="../src/project-2/images/image2.jpg"
+      alt="Sydney opera house"
+    />
+    <div className="card-content">
+      <div className="item-1">
+        <FontAwesomeIcon icon={faLocationDot} className="location-icon" />
+        <span className="country-name">AUSTRALIA</span>
+        <a href={mapsLink2} target="_blank" rel="noopener noreferrer" className="map-link">View on Google maps</a>
+      </div>
+      <h1 className="place-title">Sydney Opera House</h1>
+      <div className="place-cont">
+        <p className="place-dates">27 May, 2023 - 8 Jun, 2023</p>
+        <p className="place-description">
+          The Sydney Opera House is a multi-venue performing arts centre in Sydney. Located on the banks of the Sydney Harbour, it is often regarded as one of the 20th century's most famous and distinctive buildings.
+        </p>
+      </div>
+    </div>
+  </div>
+
+
+  <div className="card-1">
+    <img
+      className="card-img"
+      src="../src/project-2/images/image3.jpg"
+      alt="Geirangerfjord"
+    />
+    <div className="card-content">
+      <div className="item-1">
+        <FontAwesomeIcon icon={faLocationDot} className="location-icon" />
+        <span className="country-name">NORWAY</span>
+        <a href={mapsLink3} target="_blank" rel="noopener noreferrer" className="map-link">View on Google maps</a>
+      </div>
+      <h1 className="place-title">Geirangerfjord</h1>
+      <div className="place-cont">
+        <p className="place-dates">01 Oct, 2024 - 18 Nov, 2024</p>
+        <p className="place-description">
+          The Geiranger Fjord is a fjord in the Sunnmøre region of Møre og Romsdal county, Norway. It is located entirely in the Stranda Municipality.
+        </p>
+      </div>
+    </div>
+  </div>
+</>
+
