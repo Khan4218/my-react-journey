@@ -25,24 +25,33 @@ Welcome to **My React Journey** – a personal log of everything I'm learning as
 
 ---
 
-## 📚 What I’ll Learn in Section 2
+## 🧠 What I’ve Learned So Far
 
-Section 2 dives into **props, reusability, and dynamic content**:
+### ✅ Section 2 Highlights
 
-- Creating a reusable `Entry` component
-- Understanding and using props
-- Writing JavaScript inside JSX
-- Passing data into components
-- Receiving and destructuring props
-- Using non-string props
-- Importing static assets
-- Looping with `.map()` in JSX
-- Rendering arrays of components
-- The importance of the `key` prop
-- Passing entire objects as props
-- Using the spread operator for cleaner prop-passing
+- Creating a reusable Entry component
 
----
+-  Understanding and using props
+
+-  Writing JavaScript inside JSX
+
+-  Passing data into components
+
+-  Receiving and destructuring props
+
+-  Using non-string props
+
+-  Importing static assets
+
+-  Looping with .map() in JSX
+
+-  Rendering arrays of components
+
+-  The importance of the key prop
+
+-  Passing entire objects as props
+
+-  Using the spread operator for cleaner prop-passing
 
 ## 📁 Projects
 
@@ -60,19 +69,39 @@ A basic React static site built using Vite, showcasing:
 
 ---
 
-### 📌 Project 2: Travel Journal *(Coming Soon)*
+## 📌 Project 2: Travel Journal (Completed)
 
 A more advanced React project focused on:
 
-- Reusable components  
-- Dynamic content rendering using props  
-- `.map()` for rendering lists  
-- Managing data structures  
-- Passing and destructuring props  
-- Importing static assets  
+- Reusable components
+- Dynamic content rendering using props
+- .map() for rendering lists
+- Managing data structures
+- Passing and destructuring props
+- Importing static assets
 - Best practices for clean, scalable component architecture
 
----
+🔗 **Live Demo**: [akbar-react-project-2.netlify.app](https://akbar-react-project-2.netlify.app/)
+📂 Folder: React-Project-2
+
+## What's Next
+
+### 🚧 Section 3: In Progress
+
+- Section 3 focuses on state, forms, and conditional rendering in React. Here's a summary of the concepts being explored:
+- Props vs. State in React
+- Using the useState hook
+- Updating state (primitives, arrays, and objects)
+- State change with callbacks
+- Toggling state with ternary and &&
+- React forms: input, textarea, radio, checkbox, select
+- Handling form submissions
+- Conditional rendering (&&, ternary operators)
+- Passing state between components
+- Shared vs. local state
+- Dynamically applying styles
+- Real-world app simulation with interactive challenges
+- Fetching data from APIs and handling responses
 
 ## 🛠 Getting Started
 
