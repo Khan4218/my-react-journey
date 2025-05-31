@@ -181,33 +181,68 @@
 //   )
 // }
 
-import React from "react"
+// import React from "react"
 
+// export default function App() {
+//   /**
+//    * Challenge: 
+//    * - Initialize state for `isGoingOut` as a boolean
+//    * - Make it so clicking the button flips that
+//    *   boolean value (true -> false, false -> true)
+//    * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
+//    */
+//   const [isGoingOut, setIsGoingOut] = React.useState(0)
+//   function handleClick() {
+
+//     setIsGoingOut(prevBoolean => prevBoolean === false)
+//   }
+
+//   return (
+//     <main>
+//       <h1 className="title">Do I feel like going out tonight?</h1>
+//       <button
+//         className="value"
+//         onClick={handleClick}
+//         aria-label={`current answer is ${isGoingOut ? "Yes " : "No"}. click to change it`}
+
+//       >
+//         {isGoingOut ? "Yes " : "No"}
+//       </button>
+//     </main>
+//   )
+// }
+
+//complete state arrays
+import React from "react"
 export default function App() {
   /**
-   * Challenge: 
-   * - Initialize state for `isGoingOut` as a boolean
-   * - Make it so clicking the button flips that
-   *   boolean value (true -> false, false -> true)
-   * - Display "Yes" if `isGoingOut` is `true`, "No" otherwise
-   */
-  const [isGoingOut, setIsGoingOut] = React.useState(0)
-  function handleClick() {
+     * Challenge: Convert the code below to use an array
+     * held in state instead of a local variable. Initialize 
+     * the state array as an empty array
+     * 
+     * Don't worry about fixing `addFavoriteThing` quite yet.
+     */
+  const [myFavoriteThings, setMyFavroiteThings] = React.useState([]);
 
-    setIsGoingOut(prevBoolean => prevBoolean === false)
+  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁",
+    "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+  function addFavoriteThing() {
+    // We'll work on this next, nothing to do here yet.
+    setMyFavroiteThings((prevthings) => {
+      return [...prevthings,
+      allFavoriteThings[prevthings.length]
+      ]
+    })
   }
 
   return (
     <main>
-      <h1 className="title">Do I feel like going out tonight?</h1>
-      <button
-        className="value"
-        onClick={handleClick}
-        aria-label={`current answer is ${isGoingOut ? "Yes " : "No"}. click to change it`}
-
-      >
-        {isGoingOut ? "Yes " : "No"}
-      </button>
+      <button onClick={addFavoriteThing}>Add item</button>
+      <section aria-live="polite">
+        {thingsElements}
+      </section>
     </main>
   )
 }
