@@ -28,7 +28,8 @@ body {
   color: rgb(12, 11, 11);
 }
 
-.container {
+
+.add-ingredient-form {
   display: flex;
   justify-content: center;
   gap: 10px;
