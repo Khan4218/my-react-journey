@@ -84,20 +84,61 @@
 // }
 
 
-// Building again from scratch
+// // Building again from scratch
 
+// import React from "react"
+
+// export default function App() {
+//   const [count, setCount] = React.useState(0)
+
+//   function add() {
+//     setCount(count + 1)
+//   }
+
+//   function minus() {
+//     setCount(count - 1)
+//   }
+//   return (
+//     <main className="container">
+//       <h1>How many times will Bob say "state" in this section?</h1>
+//       <div className="counter">
+//         <button className="minus" aria-label="Decrease count" onClick={minus}>–</button>
+//         <h2 className="count" >{count}</h2>
+//         <button className="plus" aria-label="Increase count" onClick={add} >+</button>
+//       </div>
+//     </main>
+
+//   )
+// }    //done
+
+//useState using a call back function
 import React from "react"
 
 export default function App() {
   const [count, setCount] = React.useState(0)
-
+  /**
+   * Note: if you ever need the old value of state
+   * to help you determine the new value of state,
+   * you should pass a callback function to your
+   * state setter function instead of using
+   * state directly. This callback function will
+   * receive the old value of state as its parameter,
+   * which you can then use to determine your new
+   * value of state.
+   */
   function add() {
-    setCount(count + 1)
+    setCount(prevCount => prevCount + 1)
   }
 
   function minus() {
-    setCount(count - 1)
+    //   setCount(function (prevCount) {
+    //     return prevCount - 1;
+    //   })
+    // using shorthand property of above fun
+    setCount(prevCount => prevCount - 1)
   }
+
+
   return (
     <main className="container">
       <h1>How many times will Bob say "state" in this section?</h1>
@@ -109,4 +150,5 @@ export default function App() {
     </main>
 
   )
-}    //done
+
+}
