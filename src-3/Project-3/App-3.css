@@ -231,3 +231,16 @@ button:hover {
   border-color: #042F2E;
   color: white;
 }
+
+fieldset {
+  border: 1px solid #262626;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+fieldset>label {
+  display: flex;
+  align-items: center;
+}
