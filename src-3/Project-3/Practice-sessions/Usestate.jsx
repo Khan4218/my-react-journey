@@ -213,36 +213,113 @@
 // }
 
 //complete state arrays
+// import React from "react"
+// export default function App() {
+/**
+   * Challenge: Convert the code below to use an array
+   * held in state instead of a local variable. Initialize 
+   * the state array as an empty array
+   * 
+   * Don't worry about fixing `addFavoriteThing` quite yet.
+   */
+//   const [myFavoriteThings, setMyFavroiteThings] = React.useState([]);
+
+//   const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁",
+//     "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
+//   const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+
+//   function addFavoriteThing() {
+//     // We'll work on this next, nothing to do here yet.
+//     setMyFavroiteThings((prevthings) => {
+//       return [...prevthings,
+//       allFavoriteThings[prevthings.length]
+//       ]
+//     })
+//   }
+
+//   return (
+//     <main>
+//       <button onClick={addFavoriteThing}>Add item</button>
+//       <section aria-live="polite">
+//         {thingsElements}
+//       </section>
+//     </main>
+//   )
+// }
+
+//complex objects in state
+
 import React from "react"
+import avatar from "../images/user.png"
+import starFilled from "../images/star-filled.png"
+import starEmpty from "../images/star-empty.png"
+
 export default function App() {
+  const [contact, setContact] = React.useState({
+    firstName: "John",
+    lastName: "Doe",
+    phone: "+1 (212) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: false
+  })
   /**
-     * Challenge: Convert the code below to use an array
-     * held in state instead of a local variable. Initialize 
-     * the state array as an empty array
+   * Challenge: Fill in the values in the markup
+   * using the properties of our state object above
+   * (Ignore `isFavorite` for now)
+   */
+  /**
+     * Challenge: Use a ternary to determine which star image variable
+     * should be used based on the `contact.isFavorite` property. Test 
+     * your results by manually changing the isFavorite value in state.
      * 
-     * Don't worry about fixing `addFavoriteThing` quite yet.
+     * `true` => starFilled
+     * `false` => starEmpty
      */
-  const [myFavoriteThings, setMyFavroiteThings] = React.useState([]);
 
-  const allFavoriteThings = ["💦🌹", "😺", "💡🫖", "🔥🧤", "🟤🎁",
-    "🐴", "🍎🥧", "🚪🔔", "🛷🔔", "🥩🍝"]
-  const thingsElements = myFavoriteThings.map(thing => <p key={thing}>{thing}</p>)
+  let starIcon = contact.isFavorite ? `${starFilled}` : `${starEmpty}`;
 
-  function addFavoriteThing() {
-    // We'll work on this next, nothing to do here yet.
-    setMyFavroiteThings((prevthings) => {
-      return [...prevthings,
-      allFavoriteThings[prevthings.length]
-      ]
+  function toggleFavorite() {
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavorite: !prevContact.isFavorite
+      }
     })
   }
 
+
+
+
   return (
     <main>
-      <button onClick={addFavoriteThing}>Add item</button>
-      <section aria-live="polite">
-        {thingsElements}
-      </section>
+      <article className="card">
+        <img
+          src={avatar}
+          className="avatar"
+          alt="User profile picture of John Doe"
+        />
+        <div className="info">
+          <button
+            onClick={toggleFavorite}
+            aria-pressed={contact.isFavorite}
+            aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
+            className="favorite-button"
+
+          >
+            <img
+              src={starIcon}
+              alt={contact.isFavorite ? "is filled" : "is empty click to fill"}
+              className="favorite"
+            />
+          </button>
+          <h2 className="name">
+            {contact.firstName} {contact.lastName}
+          </h2>
+          <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
+        </div>
+
+      </article>
     </main>
   )
 }
