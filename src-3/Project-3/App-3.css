@@ -185,7 +185,7 @@ main {
 } */
 
 /* This css is for forms  */
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -230,4 +230,4 @@ button:hover {
   background-color: #115E59;
   border-color: #042F2E;
   color: white;
-}
+} */
