@@ -37,8 +37,10 @@ export default function App() {
    * it to the console to be sure it came in correctly.
    */
     const password = formData.get("password")
+    const description = formData.get("description")
     console.log(email)
     console.log(password);
+    console.log(description);
 
   }
   /**
@@ -47,14 +49,16 @@ export default function App() {
    */
   return (
     <section>
-      <form action={signUp} method="post">
+      <form action={signUp}>
         <h1>Signup form</h1>
         <label htmlFor="email" >Email:</label>
-        <input id="email" type="email" name="email" placeholder="example@email.com" />
+        <input id="email" type="email" name="email" placeholder="example@email.com" defaultValue="Akbar@4218" />
         <br />
         <label htmlFor="password">Password:</label>
         <input id="password" type="password" name="password" />
         <br />
+        <label htmlFor="description">Description:</label>
+        <textarea name="description"></textarea>
         <button>Submit</button>
       </form>
     </section>
