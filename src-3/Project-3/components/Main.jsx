@@ -11,15 +11,29 @@ export default function Main() {
       return [...prevIngredients, newIngredient]
     })
   }
+  function renderRecipeSection() {
+    if (ingredientsListItems.length > 0) {
+      return (
+        <div className="get-recipe-container">
+          <div>
+            <h3>Ready for a recipe?</h3>
+            <p>Generate a recipe from your list of ingredients.</p>
+          </div>
+          <button>Get a recipe</button>
+        </div>)
+    }
+  }
   return (
     <main>
       <form action={handleOnSubmit} className="add-ingredient-form">
         <input className="input" placeholder="e.g. oregano" aria-label="Add ingredient" name="ingredient" />
         <button className="button" >+ Add ingredient </button>
       </form>
-      <ul>
-        {ingredientsListItems}
-      </ul>
+      <section >
+        <h2>Ingredients on hand:</h2>
+        <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
+        {renderRecipeSection()}
+      </section>
     </main>
   )
 
