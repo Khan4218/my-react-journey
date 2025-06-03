@@ -1,72 +1,74 @@
-// import React from "react"
-// export default function App() {
-//   return (
-//     <>
-//       <Jokes
-//         setup="I got my daughter a fridge for her birthday."
-//         punchline="I can't wait to see her face light up when she opens it."
-//         Upvotes={10} // non string and it is a number to props
-//         isPun={true} // adding boolean value to props
-//         comments={[{ author: "", text: "", title: "" }]} // adding array to props
-//       />
-//       <Jokes
-//         setup="How did the hacker escape the police?"
-//         punchline="He just ransomware!" />
-//       <Jokes
-//         setup="Why don't pirates travel on mountain roads?"
-//         punchline="Scurvy."
-//       />
-//       <Jokes
-//         setup="Why do bees stay in the hive in the winter?"
-//         punchline="Swarm."
-//       />
-//       <Jokes
-//         setup="What's the best thing about Switzerland?"
-//         punchline="I don't know, but the flag is a big plus!"
-
-//       />
-
-
-//     </>
-//   )
-// }
-
-
-
-// function Jokes(props) {
-//   const [isShown, setIsShown] = React.useState(false)
-
-//   function toggleShown() {
-//     setIsShown(prevShown => !prevShown)
-//   }
-
-//   console.log(isShown)
-//   return (
-
-//     <div>
-//       {props.setup && <h3>{props.setup}</h3>}
-//       {/* <p>{isShown ? props.punchline : false}</p> */}
-//       {isShown && <p>{props.punchline}</p>} {/*Using conditional rendering*/}
-//       <button onClick={toggleShown}>Show punchline</button>
-//       <hr />
-//     </div>
-//   )
-// }
-
 import React from "react"
-
 export default function App() {
-  const [unreadMessages, setUnreadMessages] = React.useState([])
-
-  /**
-   * Challenge:
-   * Only display the <h1> below if there are unread messages
-   */
-
   return (
+    <>
+      <Jokes
+        setup="I got my daughter a fridge for her birthday."
+        punchline="I can't wait to see her face light up when she opens it."
+        Upvotes={10} // non string and it is a number to props
+        isPun={true} // adding boolean value to props
+        comments={[{ author: "", text: "", title: "" }]} // adding array to props
+      />
+      <Jokes
+        setup="How did the hacker escape the police?"
+        punchline="He just ransomware!" />
+      <Jokes
+        setup="Why don't pirates travel on mountain roads?"
+        punchline="Scurvy."
+      />
+      <Jokes
+        setup="Why do bees stay in the hive in the winter?"
+        punchline="Swarm."
+      />
+      <Jokes
+        setup="What's the best thing about Switzerland?"
+        punchline="I don't know, but the flag is a big plus!"
+
+      />
+
+
+    </>
+  )
+}
+
+
+
+function Jokes(props) {
+  const [isShown, setIsShown] = React.useState(false)
+
+  function toggleShown() {
+    setIsShown(prevShown => !prevShown)
+  }
+
+  console.log(isShown)
+  return (
+
     <div>
-      {unreadMessages.length > 0 && <h1>You have {unreadMessages.length} unread messages!</h1>}
-      {unreadMessages.length <= 0 && <h1>You have {unreadMessages.length} unread messages!</h1>}
+      {props.setup ? <h3>{props.setup}</h3> : null}   {/*using ternery operator instead of && operator */}
+      {/* <p>{isShown ? props.punchline : false}</p> */}
+      {/* {isShown > 0 && <p>{props.punchline}</p>} Using conditional rendering */}
+      {isShown ? <p>{props.punchline}</p> : null} {/*Using ternery instead of && operator */}
+      <button onClick={toggleShown}>{isShown ? "hide" : "show"} punchline</button>
+
+      <hr />
     </div>
   )
 }
+
+// import React from "react"
+
+// export default function App() {
+//   const [unreadMessages, setUnreadMessages] = React.useState([])
+
+//   /**
+//    * Challenge:
+//    * Only display the <h1> below if there are unread messages
+//    */
+
+//   return (
+//     <div>
+//       {unreadMessages.length > 0 && <h1>You have {unreadMessages.length} unread messages!</h1>}
+//       {unreadMessages.length <= 0 && <h1>You have {unreadMessages.length} unread messages!</h1>}
+//     </div>
+//   )
+// }
