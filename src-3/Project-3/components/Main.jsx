@@ -1,30 +1,19 @@
 import React from "react";
 import IngredientsList from "./IngredientsList";
 import ClaudeRecipe from "./ClaudeRecipe";
+import { getRecipeFromMistral } from "../data/ai";
 export default function Main() {
-  const [ingredients, setIngredients] = React.useState(["all the main spices", "pasta", "ground beef", "tomato paste"])
+  const [ingredients, setIngredients] = React.useState([])
 
   const [recipeShown, setRecipeShown] = React.useState(false)
-  function toggleRecipeShown() {
-    setRecipeShown(prev => !prev)
+  const [recipeMarkdown, setRecipeMarkdown] = React.useState("")
+
+  async function getRecipe() {
+    const markdown = await getRecipeFromMistral(ingredients)
+    setRecipeMarkdown(markdown)
+    setRecipeShown(true)
 
   }
-
-  //  * 1. Move the entire recipe <section> into its own
-  //    *    ClaudeRecipe component
-  //    * 2. Move the list of ingredients <section> into its
-  //    *    own IngredientsList component.
-  //    * 
-  //    * While you're considering how to structure things, consider
-  //    * where state is, think about if it makes sense or not to
-  //    * move it somewhere else, how you'll communicate between
-  //    * the parent/child components, etc.
-  //    * 
-  //    * The app should function as it currently does when you're
-  //    * done, so there will likely be some extra work to be done
-  //    * beyond what I've listed above.
-  //    */
-
 
 
   function handleOnSubmit(formData) {
@@ -41,7 +30,7 @@ export default function Main() {
             <h3>Ready for a recipe?</h3>
             <p>Generate a recipe from your list of ingredients.</p>
           </div>
-          <button onClick={toggleRecipeShown}>Get a recipe</button>
+          <button onClick={getRecipe}>Get a recipe</button>
         </div>)
     }
   }
@@ -58,7 +47,7 @@ export default function Main() {
 
       {ingredients.length > 0 && <IngredientsList ingredients={ingredients} />}
       {renderRecipeSection()}
-      {recipeShown && <ClaudeRecipe />}
+      {recipeShown && <ClaudeRecipe markdown={recipeMarkdown} />}
     </main>
   )
 

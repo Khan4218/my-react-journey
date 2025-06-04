@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.52.0",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
     "@fortawesome/react-fontawesome": "^0.2.2",
+    "@huggingface/inference": "^4.0.2",
+    "marked": "^15.0.12",
     "react": "^19.1.0",
     "react-dom": "^19.1.0"
   },
