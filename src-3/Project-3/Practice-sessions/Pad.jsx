@@ -12,17 +12,18 @@ export default function Pad(props) {
  * Goal: clicking each pad should toggle it on and off.
  */
 
-
-  const [padOn, setPadOn] = React.useState(props.on)
+  // const [padOn, setPadOn] = React.useState(props.on)
   function handleClick() {
-    setPadOn(prevOn => !prevOn)
+    props.toggle(props.id);
   }
+
+
 
   return (
     <button
       style={{ backgroundColor: props.color }}
-      className={padOn ? "on" : undefined}
-      onClick={props.toggle}
+      className={props.on ? "on" : undefined}
+      onClick={handleClick}
     ></button>
 
 
