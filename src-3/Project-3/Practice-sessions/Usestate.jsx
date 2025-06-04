@@ -249,130 +249,148 @@
 
 // //complex objects in state
 
-// import React from "react"
-// import avatar from "../images/user.png"
-// import starFilled from "../images/star-filled.png"
-// import starEmpty from "../images/star-empty.png"
-
-// export default function App() {
-//   const [contact, setContact] = React.useState({
-//     firstName: "John",
-//     lastName: "Doe",
-//     phone: "+1 (212) 555-1212",
-//     email: "itsmyrealname@example.com",
-//     isFavorite: false
-//   })
-//   /**
-//    * Challenge: Fill in the values in the markup
-//    * using the properties of our state object above
-//    * (Ignore `isFavorite` for now)
-//    */
-//   /**
-//      * Challenge: Use a ternary to determine which star image variable
-//      * should be used based on the `contact.isFavorite` property. Test
-//      * your results by manually changing the isFavorite value in state.
-//      *
-//      * `true` => starFilled
-//      * `false` => starEmpty
-//      */
-
-//   let starIcon = contact.isFavorite ? `${starFilled}` : `${starEmpty}`;
-
-//   function toggleFavorite() {
-//     setContact((prevContact) => {
-//       return {
-//         ...prevContact,
-//         isFavorite: !prevContact.isFavorite
-//       }
-//     })
-//   }
-
-
-
-
-//   return (
-//     <main>
-//       <article className="card">
-//         <img
-//           src={avatar}
-//           className="avatar"
-//           alt="User profile picture of John Doe"
-//         />
-//         <div className="info">
-//           <button
-//             onClick={toggleFavorite}
-//             aria-pressed={contact.isFavorite}
-//             aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
-//             className="favorite-button"
-
-//           >
-//             <img
-//               src={starIcon}
-//               alt={contact.isFavorite ? "is filled" : "is empty click to fill"}
-//               className="favorite"
-//             />
-//           </button>
-//           <h2 className="name">
-//             {contact.firstName} {contact.lastName}
-//           </h2>
-//           <p className="contact">{contact.phone}</p>
-//           <p className="contact">{contact.email}</p>
-//         </div>
-
-//       </article>
-//     </main>
-//   )
-// }
-
-// passing state as props
-
 import React from "react"
+import avatar from "../images/user.png"
+import starFilled from "../images/star-filled.png"
+import starEmpty from "../images/star-empty.png"
 
 export default function App() {
-  const [count, setCount] = React.useState(0)
-
-  function add() {
-    setCount(prevCount => prevCount + 1)
-  }
-
-  function subtract() {
-    setCount(prevCount => prevCount - 1)
-  }
-
-  function Count(props) {
-    return <h2 className="count">{props.number}</h2>
-  }
+  const [contact, setContact] = React.useState({
+    firstName: "John",
+    lastName: "Doe",
+    phone: "+1 (212) 555-1212",
+    email: "itsmyrealname@example.com",
+    isFavorite: false
+  })
   /**
-   * Challenge:
-   * - Create a new component called `Count`
-   *    - It should receive a prop called `number`, whose value
-   *      is the current value of our count
-   *    - Have the component render the h2.count element below
-   *      and display the incoming prop `number`
-   * - Replace the h2.count below with an instance of
-   *   the new Count component, passing the correct value
-   *   to its `number` prop.
-   * - After doing this, everything should be working the
-   *   same as before.
+   * Challenge: Fill in the values in the markup
+   * using the properties of our state object above
+   * (Ignore `isFavorite` for now)
    */
+  /**
+     * Challenge: Use a ternary to determine which star image variable
+     * should be used based on the `contact.isFavorite` property. Test
+     * your results by manually changing the isFavorite value in state.
+     *
+     * `true` => starFilled
+     * `false` => starEmpty
+     */
+
+  let starIcon = contact.isFavorite ? `${starFilled}` : `${starEmpty}`;
+
+  function toggleFavorite() {
+    setContact((prevContact) => {
+      return {
+        ...prevContact,
+        isFavorite: !prevContact.isFavorite
+      }
+    })
+  }
+
+  //setting state from child components
+
+  /**
+  * Challenge: Move the star image into its own component (Star)
+  * - It should receive a prop called `isFilled` that it
+  *   uses to determine which icon it will display. (You'll
+  *   need to import the 2 star icons into that new component first).
+  * - Import and render that component, passing the value of
+  *   `isFavorite` to the new `isFilled` prop.
+  * - Don't worry about the abiliity to flip this value quite yet.
+  *   Instead, you can test if it's working by manually changing
+  *   `isFavorite` in state above.
+  */
+  function Star(props) {
+    return (
+      <button
+        onClick={props.handleClick}
+        aria-pressed={props.isFilled}
+        aria-label={props.isFilled ? "Remove from favorites" : "Add to favorites"}
+        className="favorite-button"
+
+      >
+        <img
+          src={starIcon}
+          alt={props.isFilled ? "is filled" : "is empty click to fill"}
+          className="favorite"
+        />
+      </button>
+    )
+  }
+
+
 
   return (
-    <main className="container">
-      <div className="counter">
-        <button
-          className="minus"
-          onClick={subtract}
-          aria-label="Decrease count"
-        >-</button>
+    <main>
+      <article className="card">
+        <img
+          src={avatar}
+          className="avatar"
+          alt="User profile picture of John Doe"
+        />
+        <div className="info">
+          <Star isFilled={contact.isFavorite} handleClick={toggleFavorite} />
+          <h2 className="name">
+            {contact.firstName} {contact.lastName}
+          </h2>
+          <p className="contact">{contact.phone}</p>
+          <p className="contact">{contact.email}</p>
+        </div>
 
-        <Count number={count} />
-
-        <button
-          className="plus"
-          onClick={add}
-          aria-label="Increase count"
-        >+</button>
-      </div>
+      </article>
     </main>
   )
 }
+
+// passing state as props
+
+// import React from "react"
+
+// export default function App() {
+//   const [count, setCount] = React.useState(0)
+
+//   function add() {
+//     setCount(prevCount => prevCount + 1)
+//   }
+
+//   function subtract() {
+//     setCount(prevCount => prevCount - 1)
+//   }
+
+//   function Count(props) {
+//     return <h2 className="count">{props.number}</h2>
+//   }
+//   /**
+//    * Challenge:
+//    * - Create a new component called `Count`
+//    *    - It should receive a prop called `number`, whose value
+//    *      is the current value of our count
+//    *    - Have the component render the h2.count element below
+//    *      and display the incoming prop `number`
+//    * - Replace the h2.count below with an instance of
+//    *   the new Count component, passing the correct value
+//    *   to its `number` prop.
+//    * - After doing this, everything should be working the
+//    *   same as before.
+//    */
+
+//   return (
+//     <main className="container">
+//       <div className="counter">
+//         <button
+//           className="minus"
+//           onClick={subtract}
+//           aria-label="Decrease count"
+//         >-</button>
+
+//         <Count number={count} />
+
+//         <button
+//           className="plus"
+//           onClick={add}
+//           aria-label="Increase count"
+//         >+</button>
+//       </div>
+//     </main>
+//   )
+// }

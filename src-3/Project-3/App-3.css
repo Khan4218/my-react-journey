@@ -157,9 +157,7 @@ body {
   cursor: pointer;
 }
 
-/* * // this css is for contact  {
-  box-sizing: border-box;
-}
+/* // this css is for contact  */
 
 body {
   background-color: #0C4A6E;
@@ -183,6 +181,7 @@ main {
 }
 
 .card .avatar {
+  box-sizing: border-box;
   width: 100%;
   padding: 10%;
   padding-bottom: 0;
@@ -216,7 +215,8 @@ main {
 .card .favorite-button:active {
   transform: none;
   box-shadow: none;
-} */
+}
+
 
 /* This css is for forms  */
 /* * {
@@ -272,16 +272,16 @@ fieldset {
   display: flex;
   flex-direction: column;
 
-}
+} 
 
 fieldset>label {
   display: flex;
   align-items: center;
-} */
+} 
 
-/* state count css */
+state count css */
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
