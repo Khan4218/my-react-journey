@@ -344,4 +344,33 @@ body {
 .minus {
   margin-right: -20px;
   z-index: 1;
+} */
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: whitesmoke;
+}
+
+header {
+  height: 65px;
+  box-shadow: 0px 2.98256px 7.4564px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-inline: 20px;
+  background-color: #dce6fd
+}
+
+header>img,
+header>p {
+  cursor: pointer;
+}
+
+section {
+  padding: 20px;
 }
