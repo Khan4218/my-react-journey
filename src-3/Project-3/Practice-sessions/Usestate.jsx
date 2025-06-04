@@ -15,7 +15,7 @@
 //Use state array destructuring
 // import React from "react"
 // /**
-//  * Challenge: 
+//  * Challenge:
 //  * 1. Create a function called `handleClick` that runs
 //  *    setIsImportant("Definitely")
 //  * 2. Add a click event listener to the button
@@ -38,13 +38,13 @@
 
 //state practice
 /**
- * Challenge: 
+ * Challenge:
  * Create state to track our count value (initial value is 0)
  * Don't forget to replace the hard-coded "0" with your new state
  */
 //challenge part 2
 /**
-   * Challenge: 
+   * Challenge:
    * Create a function called `add` that runs
    * when the + button is clicked. (Can just console.log("add") for now)
    */
@@ -54,7 +54,7 @@
   * every time the + button is clicked
   */
 /**
-  * Challenge:  last part 
+  * Challenge:  last part
   * Add functionality to the minus button
   */
 // import React from "react"
@@ -111,7 +111,7 @@
 //   )
 // }    //done
 
-//useState using a call back function
+// //useState using a call back function
 // import React from "react"
 
 // export default function App() {
@@ -185,7 +185,7 @@
 
 // export default function App() {
 //   /**
-//    * Challenge: 
+//    * Challenge:
 //    * - Initialize state for `isGoingOut` as a boolean
 //    * - Make it so clicking the button flips that
 //    *   boolean value (true -> false, false -> true)
@@ -217,9 +217,9 @@
 // export default function App() {
 /**
    * Challenge: Convert the code below to use an array
-   * held in state instead of a local variable. Initialize 
+   * held in state instead of a local variable. Initialize
    * the state array as an empty array
-   * 
+   *
    * Don't worry about fixing `addFavoriteThing` quite yet.
    */
 //   const [myFavoriteThings, setMyFavroiteThings] = React.useState([]);
@@ -247,79 +247,132 @@
 //   )
 // }
 
-//complex objects in state
+// //complex objects in state
+
+// import React from "react"
+// import avatar from "../images/user.png"
+// import starFilled from "../images/star-filled.png"
+// import starEmpty from "../images/star-empty.png"
+
+// export default function App() {
+//   const [contact, setContact] = React.useState({
+//     firstName: "John",
+//     lastName: "Doe",
+//     phone: "+1 (212) 555-1212",
+//     email: "itsmyrealname@example.com",
+//     isFavorite: false
+//   })
+//   /**
+//    * Challenge: Fill in the values in the markup
+//    * using the properties of our state object above
+//    * (Ignore `isFavorite` for now)
+//    */
+//   /**
+//      * Challenge: Use a ternary to determine which star image variable
+//      * should be used based on the `contact.isFavorite` property. Test
+//      * your results by manually changing the isFavorite value in state.
+//      *
+//      * `true` => starFilled
+//      * `false` => starEmpty
+//      */
+
+//   let starIcon = contact.isFavorite ? `${starFilled}` : `${starEmpty}`;
+
+//   function toggleFavorite() {
+//     setContact((prevContact) => {
+//       return {
+//         ...prevContact,
+//         isFavorite: !prevContact.isFavorite
+//       }
+//     })
+//   }
+
+
+
+
+//   return (
+//     <main>
+//       <article className="card">
+//         <img
+//           src={avatar}
+//           className="avatar"
+//           alt="User profile picture of John Doe"
+//         />
+//         <div className="info">
+//           <button
+//             onClick={toggleFavorite}
+//             aria-pressed={contact.isFavorite}
+//             aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
+//             className="favorite-button"
+
+//           >
+//             <img
+//               src={starIcon}
+//               alt={contact.isFavorite ? "is filled" : "is empty click to fill"}
+//               className="favorite"
+//             />
+//           </button>
+//           <h2 className="name">
+//             {contact.firstName} {contact.lastName}
+//           </h2>
+//           <p className="contact">{contact.phone}</p>
+//           <p className="contact">{contact.email}</p>
+//         </div>
+
+//       </article>
+//     </main>
+//   )
+// }
+
+// passing state as props
 
 import React from "react"
-import avatar from "../images/user.png"
-import starFilled from "../images/star-filled.png"
-import starEmpty from "../images/star-empty.png"
 
 export default function App() {
-  const [contact, setContact] = React.useState({
-    firstName: "John",
-    lastName: "Doe",
-    phone: "+1 (212) 555-1212",
-    email: "itsmyrealname@example.com",
-    isFavorite: false
-  })
-  /**
-   * Challenge: Fill in the values in the markup
-   * using the properties of our state object above
-   * (Ignore `isFavorite` for now)
-   */
-  /**
-     * Challenge: Use a ternary to determine which star image variable
-     * should be used based on the `contact.isFavorite` property. Test 
-     * your results by manually changing the isFavorite value in state.
-     * 
-     * `true` => starFilled
-     * `false` => starEmpty
-     */
+  const [count, setCount] = React.useState(0)
 
-  let starIcon = contact.isFavorite ? `${starFilled}` : `${starEmpty}`;
-
-  function toggleFavorite() {
-    setContact((prevContact) => {
-      return {
-        ...prevContact,
-        isFavorite: !prevContact.isFavorite
-      }
-    })
+  function add() {
+    setCount(prevCount => prevCount + 1)
   }
 
+  function subtract() {
+    setCount(prevCount => prevCount - 1)
+  }
 
-
+  function Count(props) {
+    return <h2 className="count">{props.number}</h2>
+  }
+  /**
+   * Challenge:
+   * - Create a new component called `Count`
+   *    - It should receive a prop called `number`, whose value
+   *      is the current value of our count
+   *    - Have the component render the h2.count element below
+   *      and display the incoming prop `number`
+   * - Replace the h2.count below with an instance of
+   *   the new Count component, passing the correct value
+   *   to its `number` prop.
+   * - After doing this, everything should be working the
+   *   same as before.
+   */
 
   return (
-    <main>
-      <article className="card">
-        <img
-          src={avatar}
-          className="avatar"
-          alt="User profile picture of John Doe"
-        />
-        <div className="info">
-          <button
-            onClick={toggleFavorite}
-            aria-pressed={contact.isFavorite}
-            aria-label={contact.isFavorite ? "Remove from favorites" : "Add to favorites"}
-            className="favorite-button"
+    <main className="container">
+      <div className="counter">
+        <button
+          className="minus"
+          onClick={subtract}
+          aria-label="Decrease count"
+        >-</button>
 
-          >
-            <img
-              src={starIcon}
-              alt={contact.isFavorite ? "is filled" : "is empty click to fill"}
-              className="favorite"
-            />
-          </button>
-          <h2 className="name">
-            {contact.firstName} {contact.lastName}
-          </h2>
-          <p className="contact">{contact.phone}</p>
-          <p className="contact">{contact.email}</p>
-        </div>
+        <Count number={count} />
 
-      </article>
+        <button
+          className="plus"
+          onClick={add}
+          aria-label="Increase count"
+        >+</button>
+      </div>
     </main>
   )
 }
