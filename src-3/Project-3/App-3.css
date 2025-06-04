@@ -1,3 +1,5 @@
+/* This css is for Chef claude project */
+
 body {
   padding: 20px;
   font-family: 'Inter', sans-serif;
@@ -157,9 +159,10 @@ body {
   cursor: pointer;
 }
 
-/* // this css is for contact  */
+/* 
+// this css is for contact  */
 
-body {
+/* body {
   background-color: #0C4A6E;
   margin: 0;
   font-family: "Inter", sans-serif;
@@ -215,7 +218,7 @@ main {
 .card .favorite-button:active {
   transform: none;
   box-shadow: none;
-}
+} */
 
 
 /* This css is for forms  */
@@ -347,7 +350,7 @@ body {
 } */
 
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -373,4 +376,4 @@ header>p {
 
 section {
   padding: 20px;
-}
+} */
