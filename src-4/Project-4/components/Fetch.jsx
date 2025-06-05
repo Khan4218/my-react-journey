@@ -69,7 +69,7 @@ export default function Fetch() {
   React.useEffect(function () {
     return console.log("Effect function ran");
 
-  }, [count])
+  }, [])// it will check the empty array [] =>  [] so it will render once
 
   return (
     <div>
