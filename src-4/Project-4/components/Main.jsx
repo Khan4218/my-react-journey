@@ -7,6 +7,23 @@ export default function Main() {
 
   })
 
+  function handleChange(event) {
+    const { name, value } = event.currentTarget
+    console.log(name);
+
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      [name]: value
+    }))
+
+    /**
+     * Challenge: update the topText value in the meme state
+     * object every time the topText input box is changed
+     * 
+     * Note: don't worry about bottomText at this point.
+     */
+  }
+
   return (
     <main>
       <div className="form">
@@ -15,6 +32,7 @@ export default function Main() {
             type="text"
             placeholder="One does not simply"
             name="topText"
+            onChange={handleChange}
           />
         </label>
 
