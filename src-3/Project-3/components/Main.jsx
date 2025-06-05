@@ -10,8 +10,14 @@ export default function Main() {
 
   async function getRecipe() {
     const markdown = await getRecipeFromMistral(ingredients)
-    setRecipeMarkdown(markdown)
-    setRecipeShown(true)
+    if (!markdown) {
+      setRecipeMarkdown("Sorry, no recipe available right now.");
+    } else {
+      setRecipeMarkdown(markdown);
+    }
+    setRecipeShown(true);
+
+
 
   }
 
