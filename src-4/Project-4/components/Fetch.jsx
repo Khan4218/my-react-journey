@@ -8,10 +8,16 @@ export default function Fetch(props) {
     * and display it to the page. (Just replace the hard-coded
     * object inside the `<pre>` element with the data)
     */
+  console.log("rendeered")
 
-  fetch("https://swapi.tech/api/people/1")
-    .then(res => res.json())
-    .then(data => setStarWarsData(data))
+  React.useEffect(function () {
+    console.log("useeffect rendered");
+
+    fetch("https://swapi.tech/api/people/1")
+      .then(res => res.json())
+    // .then(data => setStarWarsData(data))
+  })
+
   //we stuck in a infinte loop because of state rendering and running the component
   return (
     <div>
