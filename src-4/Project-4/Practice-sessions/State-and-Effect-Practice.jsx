@@ -38,12 +38,18 @@ function WindowTracker() {
    */
   const [windowWidth, setWindowWidth] = useState(window.innerWidth)
   console.log(windowWidth);
-
+  function handleResize() {
+    setWindowWidth(window.innerWidth)
+  }
   useEffect(() => {
 
-    window.addEventListener("resize", function handleResize() {
-      setWindowWidth(window.innerWidth)
-    })
+    window.addEventListener("resize", handleResize)
+
+    return function () {
+      console.log("cleaning up");
+
+      window.removeEventListener("resize", handleResize);
+    }
   }, [])
 
 
