@@ -8,27 +8,31 @@ export default function Main() {
   })
 
   const [allMemes, setAllMemes] = React.useState([])
-  /**
-   * Challenge:
-   * Get an array of memes from the imgflip API as soon as
-   * this component renders for the first time.
-   * Check the imgflip documentation for the correct URL.
-   * Save the array of memes (not the whole response
-   * data) to state. (For this app, we'll randomly choose
-   * one of the memes from this array when the user clicks
-   * the "Get a new meme image" button, but we'll do that in
-   * a separate challenge.)
-   * 
-   * Hint: for now, don't try to use an async/await function.
-   * Instead, use `.then()` to resolve the promises
-   * from using `fetch`. We'll learn why after this challenge.
-   */
+
   React.useEffect(function () {
     fetch("https://api.imgflip.com/get_memes")
       .then(res => res.json())
       .then(data => setAllMemes(data.data.memes))
   }, [])
 
+
+  function handleClick() {
+    const randomIndex = Math.floor(Math.random() * allMemes.length)
+    const url = allMemes[randomIndex].url
+    setMeme(prevMeme => ({
+      ...prevMeme,
+      imageUrl: url
+    }))
+  }
+
+
+  /**
+    * Challenge: Get a random image from the array of
+    * allMemes when the user clicks the button. Once
+    * you've gotten a random image from the array, make
+    * sure to write the code that will display that
+    * random meme image to the page.
+    */
 
   function handleChange(event) {
     const { name, value } = event.currentTarget
@@ -39,12 +43,6 @@ export default function Main() {
       [name]: value
     }))
 
-    /**
-     * Challenge: update the topText value in the meme state
-     * object every time the topText input box is changed
-     * 
-     * Note: don't worry about bottomText at this point.
-     */
   }
 
   return (
@@ -69,7 +67,7 @@ export default function Main() {
             value={meme.bottomText}
           />
         </label>
-        <button>Get a new meme image 🖼</button>
+        <button onClick={handleClick}>Get a new meme image 🖼</button>
       </div>
       <div className="meme">
         <img src={meme.imageUrl} />
