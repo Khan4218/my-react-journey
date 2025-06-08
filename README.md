@@ -116,10 +116,6 @@ A more advanced React project focused on:
 📂 Folder: React-project-3
 
 
-
-## What's Next
-
-🔜 What's Next
 🚧 Section 4: Coming Up
 - In this section, I'm diving deeper into advanced React concepts with a fun Meme Generator App project. Here's what’s on the roadmap:
 - Meme Generator Starting Point
@@ -143,12 +139,62 @@ A more advanced React project focused on:
 - Wrapping up with a Section 4 summary
 - Stay tuned as I implement, break, fix, and learn from building an interactive meme generator powered by external APIs and React hooks!
 
+### ✅ Section 4 Highlights (Completed)
 
-To run any project locally:
+- Meme Generator Starting Point
+- Managing state for meme data
+- Controlled Components (Part 1 & 2)
+- Planning and performing data fetches
+- Functional programming in React
+- Fetching meme data from an API
+- Introduction to `useEffect`
+- `useEffect` syntax and default behavior
+- Understanding the dependencies array
+- `useEffect` with empty dependency array
+- `useEffect` quizzes and practical exercises
+- Using `useEffect` to fetch memes
+- Combined state and effect practices
+- Cleanup functions in `useEffect`
+- Generating a random meme
+- Introduction to `useRef`
+- Practical use: `scrollIntoView()` with `useRef`
+- Fixing iframe scroll bug
+
+### 📌 Project 4: Meme Generator App
+
+A fun and interactive project to generate memes with random images and custom text. Focus areas:
+
+- Working with form inputs
+- Fetching and managing meme data from an API
+- Generating and displaying random images
+- Leveraging `useEffect` and `useRef`
+
+🔗 **Live Demo**: (akbar-react-project-4.netlify.app)[https://react-meme-generator-akbar.netlify.app/]
+📂 Folder: `React-project-4`
+
+---
+
+## ✅ React Course Completed!
+
+🎉 I've officially completed the entire React course!  
+From static pages to full interactivity with forms, APIs, and hooks — this journey has been transformative.
+
+## 🔜 What’s Next
+
+I'm now planning to:
+
+- Start building full-stack projects using React + external APIs
+- Explore advanced patterns like context, reducers, and custom hooks
+- Learn TypeScript for safer React development
+- Dive into backend technologies (Node.js, Express, MongoDB)
+- Deploy professional-level React apps
+
+---
+
+## 🚀 How to Run Any Project Locally
 
 ```bash
 cd project-folder-name
 npm install
 npm run dev
 
-## This projects are done by Akbar
